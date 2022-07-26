@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
+
+    
+
+    <link rel = "stylesheet" href="{{url_for('static', filename = 'main.css')}}">
+    <title>Flask App</title>
+
+
+    <link rel="stylesheet" href="tmp.css">
+</head>
+<body>
+    <main class = 'container p-4'>
+
+        <h1 class = "display-4 text-center mt-4">Sentiment analizer</h1>
+
+
+  
+
+
+        <div class="row">
+
+            <div class="col-md-4 offset-md-4 myauto">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <form action = "/", method="POST">
+
+                            <div class="form-group">
+
+                                <input type="text" name="content" placeholder="Ingresar texto" class="form-control" autofocus>                                
+
+                            </div>
+
+                            <button type = "submit" class="btn btn-primary btn-block">Send</button>
+                            
+                        </form>
+
+                       
+
+                    </div>
+
+                    <div class="card-body text-center p-4">
+
+                        <h4>{{'"'+data[0]+'"'}}</h4>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <div class="alg-container">
+
+            <div class="alg-vms">
+
+                <h5>algoritmo de VMS</h5>
+                <p>Resultado: </p>
+                <p>{{data[1]}}</p>
+                <p>Accurracy: </p>
+                <p>ej: 1.232</p>
+
+            </div>
+
+            <div class="alg-KNN">
+
+                <h5>algoritmo de KNN</h5>
+                <p>Resultado: </p>
+                <p>{{data[2]}}</p>
+                <p>Accurracy: </p>
+                <p>ej: 1.232</p>
+
+            </div>
+
+            <div class="alg-nb">
+
+                <h5>algoritmo de NB</h5>
+                <p>Resultado: </p>
+                <p>{{data[3]}}</p>
+                <p>Accurracy: </p>
+                <p>ej: 1.232</p>
+
+            </div>
+
+
+        </div>
+
+        <div class="file-input">
+
+            <form action="/graficas" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" class="btn-seleccionar">
+            <input type="submit" value="Cargar" class="btn-cargar">
+    </div>
+
+
+    </main>
+    
+</body>
+</html>
