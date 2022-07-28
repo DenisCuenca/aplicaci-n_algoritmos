@@ -65,9 +65,9 @@
 
                 <h5>algoritmo de VMS</h5>
                 <p>Resultado: </p>
-                <p>{{data[1]}}</p>
+                <p>{{data[1]}}</p><br>
                 <p>Accurracy: </p>
-                <p>ej: 1.232</p>
+                <p>{{p[0]}}</p>
 
             </div>
 
@@ -75,7 +75,7 @@
 
                 <h5>algoritmo de KNN</h5>
                 <p>Resultado: </p>
-                <p>{{data[2]}}</p>
+                <p>{{data[2]}}</p><br>
                 <p>Accurracy: </p>
                 <p>ej: 1.232</p>
 
@@ -85,7 +85,7 @@
 
                 <h5>algoritmo de NB</h5>
                 <p>Resultado: </p>
-                <p>{{data[3]}}</p>
+                <p>{{data[3]}}</p><br>
                 <p>Accurracy: </p>
                 <p>ej: 1.232</p>
 
@@ -95,10 +95,34 @@
         </div>
 
         <div class="file-input">
+            <center>
+                <h3>Importar un archivo:</h3>
 
-            <form action="/graficas" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" class="btn-seleccionar">
-            <input type="submit" value="Cargar" class="btn-cargar">
+                <form action="/graficas" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" class="btn-seleccionar">
+                
+
+                
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="VMS" required>
+                  <label class="form-check-label" for="inlineRadio1">VMS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="tipo" id="inlineRadio2" value="knn" required>
+                  <label class="form-check-label" for="inlineRadio2">kNN</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="tipo" id="inlineRadio3" value="nb" required>
+                  <label class="form-check-label" for="inlineRadio3">NB</label>
+                </div>
+
+                <input type="submit" value="Cargar" class="btn-cargar">
+                <br>
+                
+
+
+
+            </center>
     </div>
 
 
